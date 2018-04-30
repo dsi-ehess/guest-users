@@ -1,0 +1,10 @@
+en:
+  guest_users:
+    feature_description: 'Allow internal users to invite new members'
+    feature_disabled: 'Users invitation feature disabled'
+    users:
+      index:
+        my_guests: 'my guests'
+      form:
+        display_name:     'display name'
+        email:    'email address'

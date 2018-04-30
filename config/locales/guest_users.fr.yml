@@ -1,0 +1,11 @@
+fr:
+  guest_users:
+    feature_description: 'Autoriser les utilisateurs membres à inviter des utilisateurs exterieurs'
+    feature_disabled: "Fonctionnalité d'invitation d'utilisateurs désactivée"
+    users:
+      index:
+        my_guests: 'mes invités'
+        details: 'détails'
+      form:
+        display_name: 'nom affiché'
+        email: 'adresse mail'

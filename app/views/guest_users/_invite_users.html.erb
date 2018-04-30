@@ -1,0 +1,7 @@
+<%# TODO add accessibility tags %>
+<% if Flipflop.guest_users? %>
+  <%= link_to(guest_users.new_user_path, class: 'btn btn-info invite-user-button', data: {ajax_modal: 'trigger', dismiss: 'modal'}) do %>
+    <i class="fa fa-address-book"></i>
+    <%= t('.invite') %>
+  <% end %>
+<% end %>

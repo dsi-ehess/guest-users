@@ -1,0 +1,35 @@
+<h1><span class="fa fa-address-book"></span> <%= t(".my_guests").capitalize %></h1>
+<br>
+<table class="table table-striped works-list">
+  <caption class="sr-only"><%= t("hyrax.guest_users.listing") %> <%= application_name %></caption>
+  <thead>
+  <tr>
+    <th><%= t("hyrax.guest_users.name") %>
+    </th>
+    <th><%= t("hyrax.guest_users.email") %></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @users.each_with_index do |user, counter| %>
+    <tr>
+      <td>
+        <%= link_to user, title: t('.details') do %>
+          <%= user.display_name %>
+          <i class="glyphicon glyphicon-chevron-right" aria-hidden="true"></i>
+          <span class="sr-only"> <%= "#{t(".details")} #{user.display_name}" %></span>
+        <% end %>
+      </td>
+      <td><%= user.email %></td>
+      <td></td>
+      <td><%= link_to 'Edit', guest_users.edit_user_path(user) %></td>
+      <td><%= link_to 'Destroy', user, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<% if Flipflop.guest_users? %>
+  <%= link_to 'New Guest', guest_users.new_user_path %>
+<% end %>

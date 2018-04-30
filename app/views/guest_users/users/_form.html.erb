@@ -1,0 +1,32 @@
+<%= form_with(model: user, local: true, scope: :guest_users, :data => {:ajax_modal => "preserve"}) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="form-group string required">
+        <div class="field">
+          <%= form.label(:display_name, t(".display_name").capitalize, class: "control-label string required") %>
+          <%= form.text_field(:display_name, class: "form-control string required") %>
+        </div>
+      </div>
+      <div class="form-group string required">
+        <div class="field">
+          <%= form.label(:email, t(".email").capitalize, class: "control-label string required") %>
+          <%= form.email_field(:email, class: "form-control string required", disabled: user.email.present?) %>
+        </div>
+      </div>
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    </div>
+  </div>
+<% end %>

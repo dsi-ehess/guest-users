@@ -1,0 +1,12 @@
+<%# See blacklight : ajax_modal.js for explanation  %>
+<div data-ajax-modal="close">
+  <div class="new-user-email"><%= @user.email %></div>
+  <div class="flash_messages">
+    <div class="alert alert-success alert-dismissable" id="user-invitation-alert" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <%= "#{t('.user_invitation_sent')} to #{@user.display_name} (#{@user.email})" %>
+    </div>
+  </div>
+</div>
